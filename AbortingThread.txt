@@ -1,0 +1,5 @@
+﻿빌드 시작...
+1>------ 빌드 시작: 프로젝트: ConsoleApp3, 구성: Debug Any CPU ------
+1>  ConsoleApp3 -> C:\Users\Admin\source\test\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+========== 빌드: 1개 성공, 0개 실패, 0개 최신 상태, 0개 건너뜀 ==========
+========== 빌드이(가) 11:13 AM에 시작되었고 00.199 초이(가) 소요됨 ==========

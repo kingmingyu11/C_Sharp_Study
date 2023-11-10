@@ -1,0 +1,28 @@
+﻿@model ModelBindingTest01.Models.Student
+
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method="post" action ="">
+        ID : <input asp-for ="ID" class="form-control" value="1"/>
+        <br />
+        이름 : <input asp-for = "Name" class="form-control"/>
+        <br/>
+        전화번호 : <input asp-for ="Hp" class="form-control" />
+        <br />
+        <input type ="submit" value="Submit" class="btn-outline-primary"
+
+    </form>
+
+    
+
+</div>

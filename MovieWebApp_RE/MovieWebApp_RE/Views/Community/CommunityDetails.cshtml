@@ -1,0 +1,47 @@
+﻿@model MovieWebApp_RE.Models.Community
+
+@{
+    ViewData["Title"] = "CommunityDetails";
+}
+<style>
+    body {
+        background-color: black;
+        color: red;
+    }
+</style>
+<h1>CommunityDetails</h1>
+
+<div>
+    <h4>Community</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contents)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contents)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Writer)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Writer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="CommunityEdit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Community">Back to List</a>
+</div>

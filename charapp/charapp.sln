@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "charapp", "charapp\charapp.csproj", "{4AC1BE8F-90EF-46E5-BC9E-24F62EB8EEAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AC1BE8F-90EF-46E5-BC9E-24F62EB8EEAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC1BE8F-90EF-46E5-BC9E-24F62EB8EEAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC1BE8F-90EF-46E5-BC9E-24F62EB8EEAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC1BE8F-90EF-46E5-BC9E-24F62EB8EEAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F84C12D-E5A9-435C-B371-D0C8065687D1}
+	EndGlobalSection
+EndGlobal

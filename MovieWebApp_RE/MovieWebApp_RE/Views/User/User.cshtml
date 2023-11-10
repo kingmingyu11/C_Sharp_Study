@@ -1,0 +1,78 @@
+﻿@model IEnumerable<MovieWebApp_RE.Models.User>
+
+@{
+    ViewData["Title"] = "User";
+}
+
+<h1 class="red-text">User</h1>
+<meta charset="utf-8" />
+<style>
+    body {
+        background-color: black;
+    }
+
+    .red-text {
+        color: red;
+    }
+
+    .white-button {
+        color: white;
+    }
+</style>
+<p>
+    <a asp-action="CreateUser" class="btn btn-danger" role="button" >회원 생성</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="red-text">
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th class ="red-text">
+                @Html.DisplayNameFor(model => model.Pw)
+            </th>
+            <th class="red-text">
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="red-text">
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th class="red-text">
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th class="red-text">
+                @Html.DisplayNameFor(model => model.Hp)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td class="red-text">
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+                <td class ="red-text">
+                @Html.DisplayFor(modelItem => item.Pw)
+            </td>
+                <td class="red-text">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td class="red-text">
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+                <td class="red-text">
+                @Html.DisplayFor(modelItem => item.Day)
+            </td>
+                <td class="red-text">
+                @Html.DisplayFor(modelItem => item.Hp)
+            </td>
+            <td>
+                    <a asp-action="UserEdit" asp-route-id="@item.Id" class="red-text">Edit</a> 
+                    <a asp-action="UserDetails" asp-route-id="@item.Id" class="red-text">Details</a> 
+                    <a asp-action="UserDelete" asp-route-id="@item.Id" class="red-text">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

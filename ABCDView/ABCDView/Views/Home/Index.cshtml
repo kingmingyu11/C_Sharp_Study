@@ -1,0 +1,36 @@
+﻿@model ABCDView.Models.Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>  
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method="post" action="/Home/Result">
+     <select asp-for="Math" class ="form-control" asp-items="Html.GetEnumSelectList<score>()">
+         <option value ="">수학 점수를 입력해주세요</option>
+
+     </select>
+     <br />
+        <select asp-for="English" class="form-control asp-items=" asp-items="Html.GetEnumSelectList<score>()">
+         <option value="">영어 점수를 입력해주세요</option>
+     </select>
+     <br/>
+        <select asp-for="History" class="form-control" asp-items="Html.GetEnumSelectList<score>()">
+            <option value="">역사 점수를 입력해주세요</option>
+        </select>
+        <br />  <select asp-for=" Oracle" class="form-control" asp-items="Html.GetEnumSelectList<score>()">
+            <option value="">오라클 점수를 입력해주세요</option>
+        </select>
+        <br />  <select asp-for="Data" class="form-control" asp-items="Html.GetEnumSelectList<score>()">
+            <option value="">데이터베이스 점수를 입력해주세요</option>
+        </select>
+        <br />
+
+    </form>
+         
+
+</div>

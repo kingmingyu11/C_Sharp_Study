@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Main Page</h1>
+
+<div>
+
+    <form method="post" action="/Home/Result">
+        <label for="str1">문자열 1:</label>
+        <input type="text" class="form-control" id="v1" name="v1" value="ABC" required />
+        <br />
+        <label for="str2">문자열 2:</label>
+        <input type="text" class="form-control" id="v2" name="v2" value="DEF" required />
+        <br />
+        <button type="button" class="btn btn-success">계산</button>
+    </form>
+
+</div>
+

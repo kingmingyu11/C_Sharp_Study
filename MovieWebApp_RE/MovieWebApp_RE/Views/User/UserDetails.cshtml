@@ -1,0 +1,62 @@
+﻿@model MovieWebApp_RE.Models.User
+
+@{
+    ViewData["Title"] = "UserDetails";
+}
+<style>
+    body {
+        background-color: black;
+        color: red;
+    }
+</style>
+
+<h1 style="color: red;">UserDetails</h1>
+
+<div>
+    <h4 style="color: red;">User</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Address)
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Pw)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Pw)
+        </dd>
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+       
+        </dd>
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Day)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Day)
+        </dd>
+        <dt class="col-sm-2" style="color: red;">
+            @Html.DisplayNameFor(model => model.Hp)
+        </dt>
+        <dd class="col-sm-10" style="color: red;">
+            @Html.DisplayFor(model => model.Hp)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="UserEdit" asp-route-id="@Model?.Id" style="color: red;">회원정보 수정</a> |
+    <a asp-action="User">뒤로 가기</a>
+</div>

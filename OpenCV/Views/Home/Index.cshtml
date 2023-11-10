@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var imagePath = ViewData["ImagePath"] as string;
+}
+
+<div class="text-center">
+    <h1 class="display-4">킹민규 주차장</h1>
+</div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+<body>
+    <br />
+    <br />
+    <form id="image-form" method="post" enctype="multipart/form-data" class="form-inline">
+        <div class="form-group">
+            <label for="No">번호  :  </label>
+            &nbsp;<input type="number" id="No" name="No" class="form-control" required>
+        </div>
+        <br /><br />
+        &nbsp;<button type="submit" class="btn btn-success">등록</button>
+    </form>
+
+    <br />
+    <br />
+
+    <!-- 이미지를 출력하는 부분 추가 -->
+    <div id="image-container" class="text-center" style="display: flex;">
+        <img id="output" src="" alt="이미지" style="max-width: 50%; max-height: 300px;">&nbsp;
+        <img id="output2" src="" alt="이미지" style="max-width: 50%; max-height: 300px;">
+    </div>
+
+    <script>
+        // 입력 요소와 이미지 요소에 대한 참조 가져오기
+        var inputElement = document.getElementById("No");
+        var imageElement = document.getElementById("output");
+        var imageElement2 = document.getElementById("output2");
+
+        // 이미지 요소 숨기기
+        imageElement.style.display = "none";
+        imageElement2.style.display = "none";
+
+        // 폼 제출 이벤트 처리
+        document.getElementById("image-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // 입력 요소의 값 가져오기
+            var number = parseInt(inputElement.value);
+
+            if (number >= 1 && number <= 9) {
+                number = '0' + number;
+            }
+
+            // 입력된 값에 기반하여 이미지 URL 생성
+            var imageUrl = "/img/test_car/" + number + ".jpg";
+
+            // 이미지 요소의 src 속성 업데이트
+            imageElement.src = imageUrl;
+
+            // GetImage 컨트롤러 메서드 호출
+            fetch(`/Home/GetImage?number=${number}`)
+                .then(response => response.blob()) // 이미지 데이터를 가져오기 위해 blob으로 파싱
+                .then(blob => {
+                    imageUrl = URL.createObjectURL(blob); // 이미지 blob을 URL로 변환
+
+                    // 이미지 요소의 src 속성 업데이트
+
+                    imageElement2.src = imageUrl;
+
+                    // 이미지 요소 표시
+                    imageElement.style.display = "block";
+                    imageElement2.style.display = "block";
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script>
+</body>
+</html>

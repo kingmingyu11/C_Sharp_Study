@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form method="post">
+    <label for="number1">원 단위를 입력해주세요:</label>
+    <input type="number" id="number1" name="number1" required />
+    <br />
+
+    <input type="submit" value="환율계산" />
+</form>
+
+@if(ViewBag.Result != null)
+{
+    <h1> 환율은 @ViewBag.Result1 입니다 </h1>
+    <h2> @ViewBag.Result2 </h2>
+}

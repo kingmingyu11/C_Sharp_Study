@@ -1,0 +1,108 @@
+﻿@model TagHelpers_Quiz.Models.Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+
+    .custom-form {
+        border: 2px solid #3498db;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-image: url('@Url.Content("~/images/라이엇게임즈.png")');
+        background-size: auto;
+        background-position: center;
+        height: 85%;
+    }
+
+
+
+        /* 추가 스타일 */
+
+        .custom-form label {
+            margin-bottom: 5px;
+        }
+
+
+
+        .custom-form .form-check {
+            margin-bottom: 10px;
+        }
+
+</style>
+<div class="text-center">
+    <h1 class="display-4">문의등록</h1>
+
+    <p>
+        어떠한 내용이라도 답변드릴 준비가 되어 있습니다!
+        문의를 보내주세요! 가능한 한 빨리 답변 드리도록 하겠습니다.
+    </p>
+</div>
+
+
+<div class="container">
+    <div class="col-sm-4">
+        <img src="~/images/라이엇게임즈.png" 
+        asp-append-version="true"          
+             alt="롤" 
+       
+        />
+        <br />
+        <br />
+      
+
+
+  <h2>--------상세정보--------</h2>
+<form>
+
+            <select asp-for="Moon2"
+                    class"form-control"
+                    asp-items="Html.GetEnumSelectList<Moon2>()">
+                <option value="">문의사항을 선택해 주세요</option>>
+               
+            </select>
+            <br />
+            <br />
+
+    
+    <label asp-for=ID>아이디 : </label>
+        <input asp-for="ID"
+                placeholder="아이디를 입력하세요."
+                class ="form-control" />
+                <br />
+
+    
+
+    <label asp-for="password">비밀번호</label>
+    <input asp-for="password"
+    type="password"
+    placeholder="비밀번호를 입력하세요"
+    class="form-control"/>
+    <br />
+
+         <label asp-for="title">제목</label>    
+         <input asp-for="title"
+         type="text"
+                   placeholder="제목을 입력하세요"
+                   class="form-control" />
+            <br />
+
+    <textarea asp-for="notice_board"
+        rows="10"
+         cols="70"
+    placeholder="내용을 입력해 주세요."></textarea>
+
+
+            <label>첨부파일 </label>
+
+            <input type="file" name="Photo" class="form-control" />
+            <br/>
+
+            <input type="submit" value="제출" class ="btn btn-outline-danger" />
+
+
+        </form>
+
+</div>
+</div>

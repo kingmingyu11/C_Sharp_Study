@@ -1,0 +1,58 @@
+﻿@model MovieWebApp_RE.Models.Community
+
+@{
+    ViewData["Title"] = "CommunityEdit";
+}
+
+<style>
+    body {
+        background-color: black;
+        color: red;
+    }
+</style>
+
+<h1 style ="color: red;">CommunityEdit</h1>
+
+<h4 style="color: red;">Community</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CommunityEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contents" class="control-label"></label>
+                <input asp-for="Contents" class="form-control" />
+                <span asp-validation-for="Contents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Writer" class="control-label"></label>
+                <input asp-for="Writer" class="form-control" />
+                <span asp-validation-for="Writer" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-danger" />
+            </div>
+            <br />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Community" style="color: red;">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Mvc.ModelBinding;
+@model MovieWebApp_RE.Models.User
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4">로그인/회원가입</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="text-danger">
+    @Html.ValidationSummary()
+</div>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label for="Address">이메일:</label>
+        <input type="text" id="Address" name="Address" />
+
+    </div>
+    <div>
+        <label for="Pw">비밀번호:</label>
+        <input type="password" id="Pw" name="Pw" />
+
+
+    </div>
+    <div>
+        <input type="submit" value="로그인" />
+    </div>
+</form>
+
+
+
+<form asp-action="Join" method="get">
+    <input type="submit" value="회원가입" />
+</form>
+

@@ -1,0 +1,117 @@
+﻿@model MovieWebApp_RE.Models.Movie
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        @* @* <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contents" class="control-label"></label>
+                <input asp-for="Contents" class="form-control" />
+                <span asp-validation-for="Contents" class="text-danger"></span>
+            </div>
+            <br />
+        @*     <div class="form-group">
+                <label asp-for="Video" class="control-label"></label>
+                <input asp-for="Video" class="form-control" />
+                <span asp-validation-for="Video" class="text-danger"></span>
+            </div> *@
+           @*  <div class="form-group">
+                <label asp-for="Video" class="button btn btn-primary">
+                    <input type="file" asp-for="Video"  /> 선택하기
+                </label>
+                <span asp-validation-for="Video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Age" class="control-label"></label>
+                <input asp-for="Age" class="form-control" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Views" class="control-label"></label>
+                <input asp-for="Views" class="form-control" />
+                <span asp-validation-for="Views" class="text-danger"></span>
+            </div>
+            <br />
+            @* <div class="form-group">
+                <label asp-for="Picture" class="control-label"></label>
+                <input asp-for="Picture" class="form-control" />
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div> *@
+        @*     <div class="form-group">
+                <label asp-for="Picture" class="button btn btn-primary">
+                    <input type="file" asp-for="Picture" /> 선택하기
+                </label>
+                <span asp-validation-for="Picture" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>  *@ 
+
+        <h2>영화 등록</h2>
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="Title">영화 제목</label>
+                <input type="text" id="Title" name="Title" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Contents">줄거리</label>
+                <textarea rows="10" id="Contents" name="Contents" class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="Video">영상</label>
+                <input type="file" id="Video" name="Video" class="form-control" accept=".mp4" required>
+            </div>
+            <div class="form-group">
+                <label for="Genre">장르</label>
+                <input type="text" id="Genre" name="Genre" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Age">연령가</label>
+                <input type="text" id="Age" name="Age" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Year">연도</label>
+                <input type="number" id="Year" name="Year" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Views">조회수</label>
+                <input type="number" id="Views" name="Views" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="Picture">사진</label>
+                <input type="file" id="Picture" name="Picture" class="form-control" accept=".jpg" required>
+            </div>
+            <button type="submit" class="btn btn-primary">등록</button>
+        </form>
+
+       
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
